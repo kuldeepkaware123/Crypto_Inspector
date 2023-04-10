@@ -11,8 +11,10 @@ import {
   makeStyles,
   ThemeProvider,
 } from "@material-ui/core/styles";
+import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import { CryptoState } from "../CryptoContext";
+import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -49,9 +51,11 @@ function Header() {
               variant="h6"
               className={classes.title}
             >
-              Crypto Hunter
-            </Typography>
-            {/* <Button color="inherit">Login</Button> */}
+Crypto Inspector            
+</Typography>
+            
+            <Link className="btn btn-danger" to="/checkaddress">Authenticate Currency</Link>
+
             <Select
               variant="outlined"
               labelId="demo-simple-select-label"
@@ -60,6 +64,7 @@ function Header() {
               style={{ width: 100, height: 40, marginLeft: 15 }}
               onChange={(e) => setCurrency(e.target.value)}
             >
+              
               <MenuItem value={"USD"}>USD</MenuItem>
               <MenuItem value={"INR"}>INR</MenuItem>
             </Select>
